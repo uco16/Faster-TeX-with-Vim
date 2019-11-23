@@ -3,8 +3,35 @@ Slides and other material from our talk!
 
 If you have any questions or comments, please feel free to send an email to uco21@cam.ac.uk.
 
-#### Talk Information
-Wednesday, 27 November at 2:30pm in MR5 at the CMS!
+### Talk Information
+*    Title: Using Vim to TeX faster than you can write!
+*    Speakers: Afiq Hatta and Umut Özer
+*    When: Wednesday, 27 November at 2:30pm
+*    Where: MR5, Centre for Mathematical Sciences
+
+#### Abstract
+
+Nothing beats LaTeX when it comes to clean and versatile mathematical typesetting. And nowadays, many people can type faster on a keyboard than they can write with pen and paper. But writing TeX is still too slow for daily use and its many commands are prone to errors. Or is it? What if there was a way to remove the trade-off between clean and versatile typesetting, and the time spent doing it?
+
+We are two Part III students who use TeX to type up our notes in real time during lectures.
+In this talk, we will demonstrate the methods and tools that we use, and which will allow you to TeX up a lecture or meeting in real time! (Or at least, go much faster than you did before).
+
+We will cover:
+- introductory Vim (the monster of all text editors)
+- Vim plugins that streamline the use of LaTeX
+- custom shortcut expressions for insanely fast typing
+- how to get code which ALREADY has a bunch of intuitive shortcuts (courtesy of Gilles Castel)
+
+We're talking key maps like `#a` -> `\alpha`, and `//` -> `\frac{}{}`. Typing out tensor indices will turn from agony into pleasure!
+
+You should come if you want to:
+- improve the efficiency and accuracy of your TeX coding,
+- TeX faster for essays (e.g. Part III essay), lecture notes, books, or academic papers.
+- find out about Vim - the best text editor in the world!
+
+No prerequisites required!
+
+---
 
 ## Installing Vim
 Vim should come installed with any UNIX computer. On Mac, you can also install MacVim (mvim) and on MS-Windows, you can install vim from [here](https://www.vim.org/download.php#pc) (we did not test this!).
