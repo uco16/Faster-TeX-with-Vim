@@ -1,0 +1,159 @@
+" vimrc file run at initialisation of vim
+" See :help vimrc for more information
+"
+" Author: Umut Özer
+"
+" If you have any questions on what this stuff is doing, or have played around
+" and have a recommendation for me, please feel free to drop me an email at
+" "uco21@cam.ac.uk".
+"
+" Disclaimer: I don't think that there is anything in here that could go
+" wrong, but as with any software written by other people, I'd recommend you
+" go through it in your own time to understand what everything does.
+" 
+" Very instructive: Try to disable something by placing a double quote " in
+" front of the relevant line. Now see how vim looks different the next time
+" you start it up!
+
+set number			" turn line numbers
+"set relativenumber 		" turn on relative line numbers
+augroup numbertoggle
+
+syntax on			" filetype specific syntax coloring
+
+" Make double-<Esc> clear search highlights
+nnoremap <silent> <Esc><Esc> <Esc>:nohlsearch<CR><Esc>
+
+"nnoremap 0 ^				    " remap 0 to jump to first non-blank character
+
+set incsearch                   " show best match so far when searching
+set ignorecase
+set smartcase			" when searching, try to be smart about cases
+set showmatch			" show matching brackets when indicator is over them
+
+set noexpandtab			" do not use spaces instead of tabs
+set shiftwidth=4
+set softtabstop=4
+autocmd FileType html,css setlocal shiftwidth=2 softtabstop=2 " html standards
+
+set wrap			    " do not wrap line
+set foldmethod=indent           " enable folding, fold with 'za'
+set history=500                 " remember a lot of commands and search patterns
+set showcmd                     " show incomplete command when typing
+set scrolloff=7                 " minimum nr. of lines above and below cursor
+
+" --- spell --- 
+
+setlocal spell			" switch on spell checking
+set spelllang=en_gb,de_de
+
+" Force to use underline for spell check results
+" (instead of marking the whole thing BRIGHT RED)
+augroup SpellUnderline
+  autocmd!
+  autocmd ColorScheme *
+    \ highlight SpellBad
+    \   cterm=Underline
+    \   ctermfg=red
+    \   ctermbg=NONE
+    \   term=undercurl
+    \   gui=Undercurl
+    \   guisp=Red
+  autocmd ColorScheme *
+    \ highlight SpellCap
+    \   cterm=Underline
+    \   ctermfg=magenta
+    \   ctermbg=NONE
+    \   term=Reverse
+    \   gui=Undercurl
+    \   guisp=Red
+  autocmd ColorScheme *
+    \ highlight SpellLocal
+    \   cterm=Underline
+    \   ctermfg=red
+    \   ctermbg=NONE
+    \   term=Reverse
+    \   gui=Undercurl
+    \   guisp=Red
+  autocmd ColorScheme *
+    \ highlight SpellRare
+    \   cterm=Underline
+    \   ctermfg=NONE
+    \   ctermbg=NONE
+    \   term=Reverse
+    \   gui=Undercurl
+    \   guisp=Red
+  augroup END
+
+colorscheme elflord
+
+" --- GUI (gVim options) ---
+
+"set guioptions-=T	    " Remove the taskbar in gVim
+
+" --- UNDO ---
+
+set undofile                " Save undos after file closes (very useful!)
+set undodir=$HOME/.vim/undo " where to save undo histories
+set undolevels=2000         " How many undos (the more the merrier!)
+set undoreload=10000        " number of lines to save for undo
+
+" --- INSERT mode ---
+" Ctrl+L corrects last spelling error:
+inoremap <C-l> <Esc>ml[s1z=`la
+
+"map CTRL-j to do nothing <- I often touch it by accident when trying to
+" jump to next tabstop with UltiSnips
+inoremap <C-j> <Nop>
+
+" --- VISUAL remaps --- "
+
+" --- <leader> commands ---
+
+nnoremap <SPACE> <Nop>
+let mapleader="\<space>"
+let maplocalleader="\<space>"
+" quickly edit .vimrc by opening a split
+nnoremap <leader>rc :split $MYVIMRC<CR>        
+
+map <Leader>a ggVG              " select all text in buffer
+"no remap <leader><leader> :w<GR> "double space saves file
+
+" make sure new tex files are opened as latex, not plaintex
+let g:tex_flavor = "latex"
+
+" --- PLUGINS ---
+filetype indent plugin on	" filetype specific indentation
+
+" --- ULTISNIPS ---
+
+" Where to search for the UltiSnips package (manual installation)
+"set runtimepath+=~/.vim/ultisnips_rep/
+"set runtimepath+=~/.vim/my-snippets/
+
+" Adds to the locations that should be checked for Snippet Directories
+set rtp+=~/Studium/Cambridge/PartIII/courses/
+" Specifies Snippet Directory folder names that contain snippet files
+let g:UltiSnipsSnippetDirectories=["UltiSnips", ".config"]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

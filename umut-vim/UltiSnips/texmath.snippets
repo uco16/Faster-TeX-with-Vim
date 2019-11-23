@@ -1,0 +1,144 @@
+priority -50
+
+##############
+# MATH STUFF #
+##############
+
+global !p
+
+def create_matrix(snip):
+	mx_type = snip.buffer[snip.line].strip()[0]
+	row_len = int(''.join(s for s in snip.buffer[snip.line] if s.isdigit()))
+	old_spacing = snip.buffer[snip.line][:snip.buffer[snip.line].rfind(' ') + 1]
+	
+	snip.buffer[snip.line] = ''
+	
+	final_str = old_spacing + "\\begin{" + mx_type + "matrix}\n"
+
+	for i in range(row_len):
+		final_str += old_spacing + ' '
+		final_str += " & ".join(['$' + str(i*row_len + j + 1) for j in range(row_len)])
+		final_str += " \\\\\\\n"
+
+	final_str += old_spacing + "\\end{" + mx_type + "matrix}$0"
+
+	snip.expand_anon(final_str)
+
+def create_vector(snip):
+	col_len = int(''.join(s for s in snip.buffer[snip.line] if s.isdigit()))
+	old_spacing = snip.buffer[snip.line][:snip.buffer[snip.line].rfind(' ') + 1]
+	
+	snip.buffer[snip.line] = ''
+	
+	final_str = old_spacing + "\\begin{pmatrix}\n"
+
+	for i in range(col_len):
+		final_str += old_spacing + '$' + str(i+1)
+		final_str += " \\\\\\\n"
+
+	final_str += old_spacing + "\\end{pmatrix}$0"
+
+	snip.expand_anon(final_str)
+endglobal
+
+pre_expand "create_matrix(snip)" 
+snippet "[pbBvV]mx(\d)" "Generate n x n pmatrix" rA
+endsnippet
+
+pre_expand "create_vector(snip)" 
+snippet "vec(\d)" "Generate d-dimensional vector" rA
+endsnippet
+
+snippet eq "Equation" b
+\begin{equation}
+	${1:${VISUAL}}
+\end{equation}$0
+endsnippet
+
+snippet eq* "Equation without number" b
+\begin{equation*}
+	${1:${VISUAL}}
+\end{equation*}$0
+endsnippet
+
+#snippet eqa "Equation array" b
+#\begin{eqnarray}
+#	$1 & $2 & $0
+#\end{eqnarray}
+#endsnippet
+#
+#snippet eqa* "Equation array without numbers" b
+#\begin{eqnarray*}
+#	$1 & $2 & $0
+#\end{eqnarray*}
+#endsnippet
+
+snippet ar "Array" b
+\begin{array}
+	${1:${VISUAL}}
+\end{array}
+endsnippet
+
+snippet ar* "Array without number" b
+\begin{array*}
+	${1:${VISUAL}}
+\end{array*}
+endsnippet
+
+snippet al "align" b
+\begin{align}
+	${1:${VISUAL}}
+\end{align}
+endsnippet
+
+snippet al* "Array without number" b
+\begin{align*}
+	${1:${VISUAL}}
+\end{align*}
+endsnippet
+
+snippet frac "Fraction" wA
+\frac{${1:${VISUAL:nom}}}{${2:denom}}
+endsnippet
+
+snippet frac* "Flat Fraction" wA
+\flatfrac{${1:${VISUAL:nom}}}{${2:denom}}
+endsnippet
+
+snippet ( "parentheses" iA
+(${1:${VISUAL}})$0
+endsnippet
+
+snippet { "braces" iA
+{${1:${VISUAL}}}$0
+endsnippet
+
+snippet [ "brackets" iA
+[${1:${VISUAL}}]$0
+endsnippet
+
+snippet <> "angular brackets" iA
+\langle ${1:${VISUAL}} \rangle$0
+endsnippet
+
+priority -49
+
+snippet lr( "left( right)" wA
+\left( ${1:${VISUAL}} \right)
+endsnippet
+
+snippet lr| "left| right|" wA
+\left| ${1:${VISUAL}} \right|
+endsnippet
+
+snippet lr{ "left\{ right\}" wA
+\left\\{ ${1:${VISUAL}} \right\\}
+endsnippet
+
+snippet lr[ "left[ right]" wA
+\left[ ${1:${VISUAL}} \right]
+endsnippet
+
+snippet lr< "left< right>" wA
+\left\langle ${1:${VISUAL}} \right\rangle]
+endsnippet
