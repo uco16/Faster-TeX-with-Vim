@@ -1,0 +1,2 @@
+This file outlines how to use the .vimrc to 
+install plugins in vim using vim-plug. 
