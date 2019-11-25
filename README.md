@@ -1,7 +1,7 @@
 # Faster-TeX-with-Vim
 Slides and other material from our talk!
 
-If you have any questions or comments, please feel free to send an email to uco21@cam.ac.uk.
+If you have any questions or comments, please feel free to send an email to uco21@cam.ac.uk (Umut) or aaba2@cam.ac.uk (Afiq). 
 
 ### Talk Information
 *    Title: Using Vim to TeX faster than you can write!
@@ -53,7 +53,28 @@ If you use our vimrc files, remember to change the name from "afiq-vimrc" or "um
 
 ## Installing Plugins
 
-The official [vimtex](https://github.com/lervag/vimtex) and [UltiSnips](https://github.com/sirver/UltiSnips) GitHub pages contain information on how to install their packages. In particular, they favour the installation via a plugin manager (as Afiq will describe in the talk). The manual installation (which Umut describes below) is a relatively new feature in Vim.
+The official [vimtex](https://github.com/lervag/vimtex) and [UltiSnips](https://github.com/sirver/UltiSnips) GitHub pages contain information on how to install their packages. In particular, they favour the installation via a plugin manager (as Afiq will describe in the talk). Below, we outline the method for installing plugins with a package manager (Vim-Plug), as well as manually. The manual installation (which Umut describes below) is a relatively new feature in Vim.
+
+### Installation Using Vim-Plug 
+Using Vim-Plug is a convenient way to get out-of-the-box installation. This method has been tested on Afiq's computer (Mac OS). Firstly, install Vim-Plug by reading the instructions [here](https://github.com/junegunn/vim-plug). To do this quickly, just go on your terminal and type in 
+
+`curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim`. 
+
+
+Next, grab Afiq's vimrc from the `afiq-vim` directory in this repository, and copy and paste the contents into `~/.vimrc`. 
+Then, in command mode just type in the command `:PlugInstall`! After this, you should be done.
+when you're in vim, make sure to run 
+
+`source:~/.virmc`.
+
+#### Editing and using snippets 
+If you have followed the above steps correctly, you now have access to UltiSnips. 
+In vim, just type in the command 
+
+`:UltiSnipsEdit`
+And start writing your snippets. Gilles Castel has a great set that you can look at [here](https://github.com/gillescastel/latex-snippets/blob/master/tex.snippets). 
+ 
 
 ### Manual Installation
 
