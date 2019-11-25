@@ -66,7 +66,7 @@ Next, grab Afiq's vimrc from the `afiq-vim` directory in this repository, and co
 Then, in command mode just type in the command `:PlugInstall`! After this, you should be done.
 when you're in vim, make sure to run 
 
-`source:~/.virmc`.
+`:source ~/.virmc`.
 
 #### Editing and using snippets 
 If you have followed the above steps correctly, you now have access to UltiSnips. 
