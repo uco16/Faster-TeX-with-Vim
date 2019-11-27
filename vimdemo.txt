@@ -1,0 +1,46 @@
+Vim Example
+
+- DON'T PANIC
+
+NORMAL MODE
+
+- Move with 'h j k l'
+
+- Cross out a misrtake with 'x'
+
+- Insert text with 'i': This sentence  incomplete.
+
+- Undo actions with 'u'
+
+- Can quit with ':q'
+
+- Write to file with ':w'
+
+- Search and replace with ':s/X/Y/'
+
+- Find help with ':help TOPIC'
+    - e.g. :help movement
+
+- Mnemonic based editing
+
+Examples:
+
+Delete word with 'dw': Vim is not great!
+
+Change 2 sentences 'c2s': 
+This is a sentence. Number three. This is number two. And number four.
+
+Change in braces 'ci{': {this needs to be changed}
+
+Delete around (superfluous) parens 'da('
+
+- Copy (yank) 'y', delete 'd' and paste 'p'
+
+- Yank to registers with '"ay' to '"zy': Alpha, Beta, Gamma
+
+- Print in insert mode with <CRTL-r>:
+
+More stuff on slides!
+(spelling, folding, customisation, mappings, repeating actions, recording macros on the fly, marking locations, auto complete, clipboard, visual mode and bulk editing, ...)
+
+Example: map "cea" change equation align
