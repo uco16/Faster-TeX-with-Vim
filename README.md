@@ -58,8 +58,10 @@ The official [vimtex](https://github.com/lervag/vimtex) and [UltiSnips](https://
 ### Installation Using Vim-Plug 
 Using Vim-Plug is a convenient way to get out-of-the-box installation. This method has been tested on Afiq's computer (Mac OS). Firstly, install Vim-Plug by reading the instructions [here](https://github.com/junegunn/vim-plug). To do this quickly, just go on your terminal and type in 
 
-`curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim`. 
+```sh
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
 
 
 Next, grab Afiq's vimrc from the `afiq-vim` directory in this repository, and copy and paste the contents into `~/.vimrc`. 
