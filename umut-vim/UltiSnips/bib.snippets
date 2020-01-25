@@ -1,0 +1,34 @@
+snippet book "book" b
+@book{$1,
+    author={$2}
+    title={$3},
+    year={$4},
+    DOI={$5},
+    publisher={$6},
+    pages={$7},
+}
+endsnippet
+
+snippet art "article" b
+@article{$1,
+    author={$2},
+    title={$3},
+    journal={$4},
+    volume={$5},
+    number={$6},
+    year={$7},
+    publisher={$8},
+    pages={$9},
+}
+endsnippet
+
+snippet arxiv "arxiv" b
+@misc{$1,
+    title={$2},
+    author={$3},
+    year={$5},
+    eprint={$6},
+    archivePrefix={$7},
+    primaryClass={$8}
+}
+endsnippet
